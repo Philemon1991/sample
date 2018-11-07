@@ -2,8 +2,16 @@
 <html>
   <head>
     <title>@yield('title', 'Sample') - laravel of Philemon wonderful</title>
+    <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    @yield('content')
+    @include('layouts._header')
+
+
+    <div class="container">
+      @yield('content')
+      @include('layouts._footer')
+    </div>
+
   </body>
 </html>

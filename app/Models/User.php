@@ -31,4 +31,13 @@ class User extends Authenticatable
     {
         return 'https://note.youdao.com/yws/api/image/normal/1504835456871?userId=weixinobU7VjoKRQw6DBO3ztVWPF1B2LEI';
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($user){
+            $user->activation_token = str_random(30);
+        });
+    }
 }
